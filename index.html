@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the GitHub projects of Suhaib (@itz9hb), a cybersecurity student and programmer. View the latest updates for each repository.">
-    <meta name="keywords" content="Suhaib, itz9hb, cybersecurity student, programmer, GitHub projects, coding portfolio, last updated">
+    <meta name="description" content="Explore the GitHub projects of Suhaib (@itz9hb), including itz9hb.github.io. View the latest updates for each repository.">
+    <meta name="keywords" content="Suhaib, itz9hb, cybersecurity student, programmer, GitHub projects, itz9hb.github.io, coding portfolio">
     <meta name="author" content="Suhaib (@itz9hb)">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="My Projects - Suhaib (@itz9hb)">
-    <meta property="og:description" content="Portfolio of Suhaib, showcasing GitHub projects with last updated timestamps.">
+    <meta property="og:description" content="Portfolio of Suhaib, showcasing GitHub projects including itz9hb.github.io with last updated timestamps.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.com/projects"> <!-- Replace with your actual URL -->
     <meta property="og:image" content="https://yourdomain.com/og-image.jpg"> <!-- Add an image URL later -->
@@ -76,6 +76,11 @@
             transform: scale(1.03);
             border-color: #00ddeb;
             box-shadow: 0 4px 12px rgba(0, 221, 235, 0.2);
+        }
+
+        .project-card.github-io {
+            background: #2a3638; /* Slightly different background for itz9hb.github.io */
+            border-color: #00ddeb;
         }
 
         .project-card h2 {
@@ -281,6 +286,9 @@
 
                 const projectCard = document.createElement('article');
                 projectCard.className = 'project-card';
+                if (repo.name === 'itz9hb.github.io') {
+                    projectCard.classList.add('github-io'); // Highlight the GitHub Pages repo
+                }
                 projectCard.innerHTML = `
                     <h2>${repo.name}</h2>
                     <p>${repo.description || 'No description'}</p>
